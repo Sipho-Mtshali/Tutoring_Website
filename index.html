@@ -702,5 +702,29 @@
           checkSection();
         });
     </script>
+
+<script>
+	$(document).ready(function() {
+	  // Collapse the navbar after clicking a link
+	  $('.navbar-nav a').on('click', function() {
+		$('.navbar-collapse').collapse('hide');
+	  });
+	});
+
+	//preventing to right click on my project in order to inspect my code
+	document.addEventListener("contextmenu", (event) => event.preventDefault());
+
+	// Disable common keyboard shortcuts like F12 and Ctrl+Shift+I for opening DevTools.
+	document.addEventListener("keydown", (event) => {
+    if (
+        event.key === "F12" ||
+        (event.ctrlKey && event.shiftKey && (event.key === "I" || event.key === "J")) ||
+        (event.ctrlKey && event.key === "U") // Prevent "View Source" (Ctrl+U)
+    ) {
+        event.preventDefault();
+    }
+});
+
+  </script>
 </body>
 </html>
